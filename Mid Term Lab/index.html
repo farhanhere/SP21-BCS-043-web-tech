@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BBC Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <style>
+    
+      .navbar-nav .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background-color: transparent;
+        transition: background-color 0.3s;
+      }
+
+      .navbar-nav .nav-link:hover::after {
+        background-color: red;
+      }
+
+      
+      .navbar {
+        background-color: #000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        color: #fff;
+      }
+
+      .sign-in {
+        color: #000;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 0.2rem 1rem;
+      }
+
+      .search-icon {
+        color: #000;
+      }
+
+      .search-input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        color: #000;
+      }
+
+    
+      .section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .section .section-heading {
+        font-size: 24px;
+        text-align: left; 
+        padding: 10px; 
+        position: relative;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .section .section-heading:hover {
+        color: red; 
+      }
+
+      .section .section-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: red; 
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s;
+      }
+
+      .section .section-heading:hover::after {
+        transform: scaleX(1); 
+        transform-origin: left;
+      }
+
+      .section .images-container {
+        display: flex;
+        justify-content: space-between; 
+        width: 100%;
+      }
+
+      .section .image {
+        position: relative;
+        width: 48%; 
+        height: auto;
+        transition: transform 0.3s; 
+        margin-top: 10px; 
+      }
+
+      .section .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s;
+      }
+
+      .section .image:hover {
+        transform: scale(1.05); 
+      }
+    </style>
+
+    <!-- Add Font Awesome library for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" id="logo">BBC</a>
+        <a class="sign-in" href="#"><i class="fas fa-user"></i> Sign In</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sport</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Weather</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Entertainment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Worklife</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Travel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Future</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Culture</a>
+            </li>
+          </ul>
+        </div>
+        <form class="form-inline search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input class="search-input" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </nav>
+
+    <!-- Main News Section -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading">Welcome to BBC.com</h1>
+        <div class="images-container">
+          <div class="image">
+            <img src="./pic/picture2.jpg" alt="Image 1" class="img-fluid">
+            <div class="overlay">
+              <h1>Image 1 Overlay</h1>
+              <p>This is the overlay for the first image.</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./pic/picture1.jpg" alt="Image 2" class="img-fluid">
+            <div class="overlay">
+              <h1>Image 2 Overlay</h1>
+              <p>This is the overlay for the second image.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading">Sports</h1>
+        <div class="images-container">
+          <div class="image">
+            <img src="./pic/picture2.jpg" alt="Sports Image 1" class="img-fluid">
+            <div class="overlay">
+              <h1>Sports Image 1 Overlay</h1>
+              <p>This is the overlay for the first sports image.</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./pic/picture1.jpg" alt="Sports Image 2" class="img-fluid">
+            <div class="overlay">
+              <h1>Sports Image 2 Overlay</h1>
+              <p>This is the overlay for the second sports image.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading">Weather</h1>
+        <div class="images-container">
+          <div class="image">
+            <img src="./pic/picture2.jpg" alt="Weather Image 1" class="img-fluid">
+            <div class="overlay">
+              <h1>Weather Image 1 Overlay</h1>
+              <p>This is the overlay for the first weather image.</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./pic/picture1.jpg" alt="Weather Image 2" class="img-fluid">
+            <div class="overlay">
+              <h1>Weather Image 2 Overlay</h1>
+              <p>This is the overlay for the second weather image.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entertainment Section -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading">Entertainment</h1>
+        <div class="images-container">
+          <div class="image">
+            <img src="./pic/picture2.jpg" alt="Entertainment Image 1" class="img-fluid">
+            <div class="overlay">
+              <h1>Entertainment Image 1 Overlay</h1>
+              <p>This is the overlay for the first entertainment image.</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./pic/picture1.jpg" alt="Entertainment Image 2" class="img-fluid">
+            <div class="overlay">
+              <h1>Entertainment Image 2 Overlay</h1>
+              <p>This is the overlay for the second entertainment image.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      
+        function hideMainMenu() {
+          var mainMenu = document.getElementById('navbarNav');
+          if (mainMenu.style.display === 'block') {
+            mainMenu.style.display = 'none';
+          } else {
+            mainMenu.style.display = 'block';
+          }
+        }
+      
+        
+        document.getElementById('logo').addEventListener('click', hideMainMenu);
+      </script>
+      
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqGVRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
