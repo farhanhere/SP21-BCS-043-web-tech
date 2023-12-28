@@ -1,0 +1,24 @@
+<%- include('layout/nav') %>
+
+<div class="container-fluid mt-8">
+    <% for (let post of posts) { %>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                
+            </div>
+            <div class="col-md-6">
+                <p class="text-sm md:text-lg"><%= post._id %></p>
+                <h1 class="text-xl font-bold mb-2 md:text-2xl"><%= post.title %></h1>
+                <p class="text-xl font-bold mb-2 md:text-2xl"><%= post.categories %></p>
+                
+                <p class="text-sm md:text-lg"><%= post.desc %></p>
+            </div>
+            <a href="/api/delete/<%= post._id %>">delete</a>
+            <a href="/api/edit/<%= post._id %>">edit</a>
+
+        </div>
+
+    <% } %>
+</div>
+
+<%- include('layout/footer') %>
